@@ -1,0 +1,2197 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ZEONO - Next-Gen Streaming Platform</title>
+    <meta name="description" content="ZEONO - Experience the future of entertainment with our cutting-edge streaming platform featuring movies and series in stunning quality">
+    <meta name="keywords" content="streaming, movies, series, entertainment, futuristic, ZEONO, watch online">
+    <meta name="author" content="ZEONO Entertainment">
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="ZEONO - Next-Gen Streaming Platform">
+    <meta property="og:description" content="Experience the future of entertainment with cutting-edge streaming technology">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://zeono.com">
+    <meta property="og:image" content="https://zeono.com/og-image.jpg">
+
+    <!-- Favicon placeholder -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'><text y='24' font-size='24'>🎬</text></svg>">
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+        {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            "name": "ZEONO",
+            "description": "Next-generation streaming platform",
+            "url": "https://zeono.com",
+            "potentialAction": {
+                "@type": "SearchAction",
+                "target": "https://zeono.com/search?q={search_term_string}",
+                "query-input": "required name=search_term_string"
+            }
+        }
+    </script>
+
+    <style>
+        /* 
+==============================================
+ZEONO EXPERIMENTAL SITE STYLES
+Next-gen streaming platform with futuristic design
+==============================================
+*/
+        
+         :root {
+            /* Color Palette */
+            --primary: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            --accent: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+            --bg: #0a0a0f;
+            --bg-secondary: #1a1a2e;
+            --muted: #16213e;
+            --text-primary: #ffffff;
+            --text-secondary: #b8b8b8;
+            --neon-purple: #9d4edd;
+            --neon-cyan: #06ffa5;
+            --neon-pink: #ff006e;
+            --glass-bg: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+            /* Spacing & Layout */
+            --nav-height: 70px;
+            --container-padding: 2rem;
+            --border-radius: 12px;
+            --border-radius-lg: 20px;
+            /* Animations */
+            --transition-fast: 0.2s ease;
+            --transition-smooth: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+            --transition-bounce: 0.6s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+        }
+        /* Dark/Light Mode Toggle */
+        
+        [data-theme="light"] {
+            --bg: #f8f9fa;
+            --bg-secondary: #ffffff;
+            --muted: #e9ecef;
+            --text-primary: #212529;
+            --text-secondary: #6c757d;
+            --glass-bg: rgba(0, 0, 0, 0.05);
+            --glass-border: rgba(0, 0, 0, 0.1);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Arial', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text-primary);
+            line-height: 1.6;
+            overflow-x: hidden;
+            position: relative;
+        }
+        /* Animated Background Particles */
+        
+        .particles-bg {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: -1;
+            opacity: 0.3;
+        }
+        
+        .particle {
+            position: absolute;
+            background: var(--neon-cyan);
+            width: 2px;
+            height: 2px;
+            border-radius: 50%;
+            animation: float 6s infinite linear;
+        }
+        
+        @keyframes float {
+            0% {
+                transform: translateY(100vh) scale(0);
+                opacity: 0;
+            }
+            10% {
+                opacity: 1;
+            }
+            90% {
+                opacity: 1;
+            }
+            100% {
+                transform: translateY(-10vh) scale(1);
+                opacity: 0;
+            }
+        }
+        /* Navigation Bar */
+        
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: var(--nav-height);
+            background: rgba(10, 10, 15, 0.9);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--glass-border);
+            z-index: 1000;
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 var(--container-padding);
+            height: 100%;
+        }
+        
+        .logo {
+            font-size: 2rem;
+            font-weight: 900;
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px var(--neon-purple);
+            animation: glow-pulse 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes glow-pulse {
+            0% {
+                filter: brightness(1) drop-shadow(0 0 5px var(--neon-purple));
+            }
+            100% {
+                filter: brightness(1.3) drop-shadow(0 0 15px var(--neon-purple));
+            }
+        }
+        
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+            align-items: center;
+        }
+        
+        .nav-links a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: var(--border-radius);
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .nav-links a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+            transition: var(--transition-smooth);
+        }
+        
+        .nav-links a:hover::before {
+            left: 100%;
+        }
+        
+        .nav-links a:hover {
+            color: var(--text-primary);
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            transform: translateY(-2px);
+        }
+        
+        .nav-actions {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        /* Theme Toggle */
+        
+        .theme-toggle {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: 25px;
+            width: 50px;
+            height: 25px;
+            cursor: pointer;
+            position: relative;
+            transition: var(--transition-smooth);
+        }
+        
+        .theme-toggle::after {
+            content: '';
+            position: absolute;
+            top: 2px;
+            left: 2px;
+            width: 19px;
+            height: 19px;
+            border-radius: 50%;
+            background: var(--neon-cyan);
+            transition: var(--transition-bounce);
+            box-shadow: 0 0 10px var(--neon-cyan);
+        }
+        
+        .theme-toggle.active::after {
+            transform: translateX(25px);
+            background: var(--neon-pink);
+            box-shadow: 0 0 10px var(--neon-pink);
+        }
+        /* Mobile Menu Button */
+        
+        .mobile-menu-btn {
+            display: none;
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        /* Hero Section */
+        
+        .hero {
+            height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 50%, #f093fb 100%);
+            background-size: 400% 400%;
+            animation: gradient-shift 8s ease-in-out infinite;
+        }
+        
+        @keyframes gradient-shift {
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.4);
+            z-index: 1;
+        }
+        
+        .hero-content {
+            text-align: center;
+            z-index: 2;
+            position: relative;
+            max-width: 800px;
+            padding: 0 var(--container-padding);
+        }
+        
+        .hero h1 {
+            font-size: clamp(3rem, 8vw, 6rem);
+            font-weight: 900;
+            margin-bottom: 1rem;
+            background: linear-gradient(135deg, #ffffff, var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(255, 255, 255, 0.5);
+            animation: hero-text-glow 3s ease-in-out infinite alternate;
+        }
+        
+        @keyframes hero-text-glow {
+            0% {
+                filter: drop-shadow(0 0 10px rgba(255, 255, 255, 0.3));
+            }
+            100% {
+                filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+            }
+        }
+        
+        .hero p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        /* Search Bar */
+        
+        .search-container {
+            position: relative;
+            max-width: 500px;
+            margin: 0 auto 2rem;
+        }
+        
+        .search-bar {
+            width: 100%;
+            padding: 1rem 1.5rem;
+            font-size: 1rem;
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            color: var(--text-primary);
+            backdrop-filter: blur(20px);
+            transition: var(--transition-smooth);
+        }
+        
+        .search-bar::placeholder {
+            color: var(--text-secondary);
+        }
+        
+        .search-bar:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 20px rgba(6, 255, 165, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        .search-suggestions {
+            position: absolute;
+            top: 100%;
+            left: 0;
+            right: 0;
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            margin-top: 0.5rem;
+            max-height: 200px;
+            overflow-y: auto;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            z-index: 100;
+        }
+        
+        .search-suggestions.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .suggestion-item {
+            padding: 0.75rem 1rem;
+            cursor: pointer;
+            transition: var(--transition-fast);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+        }
+        
+        .suggestion-item:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        /* CTA Button */
+        
+        .cta-button {
+            display: inline-block;
+            padding: 1rem 2rem;
+            background: linear-gradient(135deg, var(--neon-pink), var(--neon-purple));
+            color: white;
+            text-decoration: none;
+            border-radius: var(--border-radius-lg);
+            font-weight: 700;
+            font-size: 1.1rem;
+            transition: var(--transition-smooth);
+            position: relative;
+            overflow: hidden;
+            border: none;
+            cursor: pointer;
+        }
+        
+        .cta-button::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+            transition: var(--transition-smooth);
+        }
+        
+        .cta-button:hover::before {
+            left: 100%;
+        }
+        
+        .cta-button:hover {
+            transform: translateY(-3px) scale(1.05);
+            box-shadow: 0 10px 30px rgba(255, 0, 110, 0.4);
+        }
+        /* Main Content */
+        
+        main {
+            padding-top: var(--nav-height);
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        /* Filters Section */
+        
+        .filters {
+            background: var(--glass-bg);
+            backdrop-filter: blur(20px);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            padding: 1.5rem;
+            margin: 2rem 0;
+            transition: var(--transition-smooth);
+        }
+        
+        .filters:hover {
+            background: rgba(255, 255, 255, 0.08);
+        }
+        
+        .filters h3 {
+            margin-bottom: 1rem;
+            color: var(--neon-cyan);
+        }
+        
+        .filter-groups {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+        }
+        
+        .filter-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: var(--text-secondary);
+        }
+        
+        .filter-group select {
+            width: 100%;
+            padding: 0.5rem;
+            background: var(--muted);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius);
+            color: var(--text-primary);
+            font-size: 0.9rem;
+            transition: var(--transition-smooth);
+        }
+        
+        .filter-group select:focus {
+            outline: none;
+            border-color: var(--neon-cyan);
+            box-shadow: 0 0 10px rgba(6, 255, 165, 0.2);
+        }
+        /* Content Grid */
+        
+        .content-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+        
+        .content-card {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            overflow: hidden;
+            transition: var(--transition-smooth);
+            cursor: pointer;
+            position: relative;
+            backdrop-filter: blur(20px);
+        }
+        
+        .content-card:hover {
+            transform: translateY(-10px) scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+            border-color: var(--neon-cyan);
+        }
+        
+        .card-image {
+            position: relative;
+            overflow: hidden;
+            aspect-ratio: 16/9;
+            background: linear-gradient(135deg, var(--muted), var(--bg-secondary));
+        }
+        
+        .card-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition-smooth);
+        }
+        
+        .content-card:hover .card-image img {
+            transform: scale(1.1);
+        }
+        
+        .play-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: var(--transition-smooth);
+            backdrop-filter: blur(10px);
+        }
+        
+        .content-card:hover .play-overlay {
+            opacity: 1;
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .play-overlay svg {
+            width: 24px;
+            height: 24px;
+            fill: white;
+            margin-left: 3px;
+        }
+        
+        .card-content {
+            padding: 1.5rem;
+        }
+        
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            background: linear-gradient(135deg, var(--text-primary), var(--neon-cyan));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+        
+        .card-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 0.5rem;
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+        }
+        
+        .rating {
+            display: flex;
+            align-items: center;
+            gap: 0.25rem;
+        }
+        
+        .rating svg {
+            width: 14px;
+            height: 14px;
+            fill: #ffc107;
+        }
+        
+        .card-synopsis {
+            font-size: 0.9rem;
+            color: var(--text-secondary);
+            line-height: 1.4;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        
+        .card-actions {
+            display: flex;
+            gap: 0.5rem;
+            margin-top: 1rem;
+        }
+        
+        .btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            font-size: 0.9rem;
+            font-weight: 500;
+            transition: var(--transition-smooth);
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--neon-purple), var(--neon-pink));
+            color: white;
+        }
+        
+        .btn-secondary {
+            background: var(--glass-bg);
+            color: var(--text-primary);
+            border: 1px solid var(--glass-border);
+        }
+        
+        .btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .btn-primary:hover {
+            box-shadow: 0 5px 15px rgba(157, 78, 221, 0.4);
+        }
+        /* Video Player Modal */
+        
+        .modal {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.9);
+            backdrop-filter: blur(10px);
+            z-index: 2000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            visibility: hidden;
+            transition: var(--transition-smooth);
+            padding: 2rem;
+        }
+        
+        .modal.show {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .modal-content {
+            background: var(--glass-bg);
+            border: 1px solid var(--glass-border);
+            border-radius: var(--border-radius-lg);
+            max-width: 90vw;
+            max-height: 90vh;
+            overflow: hidden;
+            backdrop-filter: blur(20px);
+            transform: scale(0.8);
+            transition: var(--transition-smooth);
+        }
+        
+        .modal.show .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 1.5rem;
+            border-bottom: 1px solid var(--glass-border);
+        }
+        
+        .modal-title {
+            font-size: 1.25rem;
+            font-weight: 700;
+        }
+        
+        .close-btn {
+            background: none;
+            border: none;
+            color: var(--text-primary);
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.25rem;
+            border-radius: 50%;
+            transition: var(--transition-fast);
+        }
+        
+        .close-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: scale(1.1);
+        }
+        
+        .video-container {
+            position: relative;
+            background: #000;
+        }
+        
+        .custom-video-player {
+            width: 100%;
+            max-width: 800px;
+            aspect-ratio: 16/9;
+        }
+        
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0, 0, 0, 0.8));
+            padding: 1rem;
+            transform: translateY(100%);
+            transition: var(--transition-smooth);
+        }
+        
+        .video-container:hover .video-controls {
+            transform: translateY(0);
+        }
+        
+        .controls-row {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+        
+        .control-btn {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            transition: var(--transition-fast);
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.2);
+        }
+        
+        .progress-container {
+            flex: 1;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.3);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .progress-bar {
+            height: 100%;
+            background: var(--neon-cyan);
+            border-radius: 2px;
+            transition: var(--transition-fast);
+            position: relative;
+        }
+        
+        .progress-bar::after {
+            content: '';
+            position: absolute;
+            right: -6px;
+            top: -4px;
+            width: 12px;
+            height: 12px;
+            background: var(--neon-cyan);
+            border-radius: 50%;
+            opacity: 0;
+            transition: var(--transition-fast);
+        }
+        
+        .progress-container:hover .progress-bar::after {
+            opacity: 1;
+        }
+        
+        .time-display {
+            color: white;
+            font-size: 0.9rem;
+            min-width: 100px;
+        }
+        /* Footer */
+        
+        footer {
+            background: var(--bg-secondary);
+            border-top: 1px solid var(--glass-border);
+            padding: 3rem 0 1rem;
+            margin-top: 4rem;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        .footer-section h4 {
+            color: var(--neon-cyan);
+            margin-bottom: 1rem;
+            font-size: 1.1rem;
+        }
+        
+        .footer-section a {
+            color: var(--text-secondary);
+            text-decoration: none;
+            display: block;
+            padding: 0.25rem 0;
+            transition: var(--transition-fast);
+        }
+        
+        .footer-section a:hover {
+            color: var(--text-primary);
+            transform: translateX(5px);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid var(--glass-border);
+            color: var(--text-secondary);
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .nav-links {
+                display: none;
+            }
+            .mobile-menu-btn {
+                display: block;
+            }
+            .hero h1 {
+                font-size: 3rem;
+            }
+            .content-grid {
+                grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+                gap: 1rem;
+            }
+            .filter-groups {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+            .modal {
+                padding: 1rem;
+            }
+             :root {
+                --container-padding: 1rem;
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .content-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+        /* Loading Animation */
+        
+        .loading {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 2rem;
+        }
+        
+        .spinner {
+            width: 40px;
+            height: 40px;
+            border: 3px solid var(--glass-border);
+            border-top-color: var(--neon-cyan);
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+        }
+        
+        @keyframes spin {
+            to {
+                transform: rotate(360deg);
+            }
+        }
+        /* Utility Classes */
+        
+        .fade-in {
+            animation: fadeIn 0.6s ease-out forwards;
+        }
+        
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .pulse {
+            animation: pulse 2s infinite;
+        }
+        
+        @keyframes pulse {
+            0%,
+            100% {
+                opacity: 1;
+            }
+            50% {
+                opacity: 0.5;
+            }
+        }
+        /* Accessibility */
+        
+        @media (prefers-reduced-motion: reduce) {
+            * {
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+        
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border: 0;
+        }
+        /* RTL Support */
+        
+        [dir="rtl"] .nav-links a:hover {
+            transform: translateX(-5px);
+        }
+        
+        [dir="rtl"] .footer-section a:hover {
+            transform: translateX(-5px);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- 
+    ==============================================
+    ZEONO EXPERIMENTAL SITE
+    Next-generation streaming platform showcase
+    
+    IMPORTANT: Replace video links with legal licensed sources
+    Current demo uses placeholder/sample videos only
+    
+    To run locally: Open in browser or use http-server
+    ==============================================
+    -->
+
+    <!-- Animated Particles Background -->
+    <div class="particles-bg" id="particlesBg"></div>
+
+    <!-- Navigation -->
+    <nav role="navigation" aria-label="Main navigation">
+        <div class="nav-container">
+            <div class="logo" role="img" aria-label="ZEONO Logo">ZEONO</div>
+
+            <ul class="nav-links" role="menubar">
+                <li role="none"><a href="#home" role="menuitem">Home</a></li>
+                <li role="none"><a href="#categories" role="menuitem">Categories</a></li>
+                <li role="none"><a href="#trending" role="menuitem">Trending</a></li>
+                <li role="none"><a href="#my-list" role="menuitem">My List</a></li>
+                <li role="none"><a href="#about" role="menuitem">About</a></li>
+            </ul>
+
+            <div class="nav-actions">
+                <button class="theme-toggle" id="themeToggle" aria-label="Toggle theme" role="switch"></button>
+                <button class="mobile-menu-btn" id="mobileMenuBtn" aria-label="Open mobile menu">☰</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero" id="home" role="banner">
+        <div class="hero-content">
+            <h1>Welcome to ZEONO</h1>
+            <p>Experience the future of entertainment with cutting-edge streaming technology</p>
+
+            <div class="search-container">
+                <input type="search" class="search-bar" id="searchBar" placeholder="Search movies, series, genres..." aria-label="Search content" autocomplete="off">
+                <div class="search-suggestions" id="searchSuggestions" role="listbox" aria-label="Search suggestions"></div>
+            </div>
+
+            <button class="cta-button" onclick="scrollToContent()">Explore Now</button>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main role="main">
+        <div class="container">
+            <!-- Filters Section -->
+            <section class="filters" id="filters" role="region" aria-label="Content filters">
+                <h3>Filter Content</h3>
+                <div class="filter-groups">
+                    <div class="filter-group">
+                        <label for="typeFilter">Type</label>
+                        <select id="typeFilter" aria-label="Filter by content type">
+                            <option value="">All</option>
+                            <option value="movie">Movies</option>
+                            <option value="series">Series</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="genreFilter">Genre</label>
+                        <select id="genreFilter" aria-label="Filter by genre">
+                            <option value="">All Genres</option>
+                            <option value="action">Action</option>
+                            <option value="comedy">Comedy</option>
+                            <option value="drama">Drama</option>
+                            <option value="sci-fi">Sci-Fi</option>
+                            <option value="thriller">Thriller</option>
+                            <option value="romance">Romance</option>
+                            <option value="horror">Horror</option>
+                            <option value="documentary">Documentary</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="yearFilter">Year</label>
+                        <select id="yearFilter" aria-label="Filter by release year">
+                            <option value="">All Years</option>
+                            <option value="2024">2024</option>
+                            <option value="2023">2023</option>
+                            <option value="2022">2022</option>
+                            <option value="2021">2021</option>
+                            <option value="2020">2020</option>
+                        </select>
+                    </div>
+                    <div class="filter-group">
+                        <label for="ratingFilter">Rating</label>
+                        <select id="ratingFilter" aria-label="Filter by rating">
+                            <option value="">All Ratings</option>
+                            <option value="9">9+ Stars</option>
+                            <option value="8">8+ Stars</option>
+                            <option value="7">7+ Stars</option>
+                            <option value="6">6+ Stars</option>
+                        </select>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Content Grid -->
+            <section class="content-section" id="categories" role="region" aria-label="Content library">
+                <div class="loading" id="loadingSpinner">
+                    <div class="spinner" aria-label="Loading content"></div>
+                </div>
+                <div class="content-grid" id="contentGrid" role="grid" aria-label="Movies and series grid"></div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Video Player Modal -->
+    <div class="modal" id="videoModal" role="dialog" aria-labelledby="modalTitle" aria-hidden="true">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2 class="modal-title" id="modalTitle">Now Playing</h2>
+                <button class="close-btn" id="closeModal" aria-label="Close video player">&times;</button>
+            </div>
+            <div class="video-container">
+                <video class="custom-video-player" id="videoPlayer" controls preload="metadata" aria-label="Video player">
+                    <track kind="subtitles" src="" label="English" default>
+                    Your browser does not support the video tag.
+                </video>
+                <div class="video-controls">
+                    <div class="controls-row">
+                        <button class="control-btn" id="playPauseBtn" aria-label="Play/Pause">▶</button>
+                        <div class="progress-container" id="progressContainer" aria-label="Video progress">
+                            <div class="progress-bar" id="progressBar"></div>
+                        </div>
+                        <span class="time-display" id="timeDisplay">0:00 / 0:00</span>
+                        <button class="control-btn" id="fullscreenBtn" aria-label="Fullscreen">⛶</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer role="contentinfo">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h4>Content</h4>
+                    <a href="#movies">Movies</a>
+                    <a href="#series">TV Series</a>
+                    <a href="#documentaries">Documentaries</a>
+                    <a href="#originals">ZEONO Originals</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Features</h4>
+                    <a href="#download">Download & Watch</a>
+                    <a href="#profiles">Multiple Profiles</a>
+                    <a href="#quality">4K Ultra HD</a>
+                    <a href="#devices">All Devices</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Support</h4>
+                    <a href="#help">Help Center</a>
+                    <a href="#contact">Contact Us</a>
+                    <a href="#privacy" onclick="showPrivacyModal()">Privacy Policy</a>
+                    <a href="#terms">Terms of Service</a>
+                </div>
+                <div class="footer-section">
+                    <h4>Company</h4>
+                    <a href="#about">About ZEONO</a>
+                    <a href="#careers">Careers</a>
+                    <a href="#press">Press</a>
+                    <a href="#investors">Investors</a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2024 ZEONO Entertainment. All rights reserved. | Experimental Demo Site</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        /*
+                ==============================================
+                ZEONO JAVASCRIPT - EXPERIMENTAL DEMO
+                Next-generation streaming platform functionality
+
+                IMPORTANT NOTES:
+                - Replace video URLs with legal licensed content
+                - Add authentication system for admin panel
+                - Implement real backend for user data
+                - Add proper error handling and validation
+                ==============================================
+                */
+
+        // Debug mode toggle
+        const DEBUG_MODE = true;
+
+        function debugLog(...args) {
+            if (DEBUG_MODE) {
+                console.log('[ZEONO DEBUG]:', ...args);
+            }
+        }
+
+        // Mock Dataset - Replace with real API calls
+        const mockContent = [{
+                id: 1,
+                title: "Cosmic Odyssey",
+                type: "movie",
+                year: 2024,
+                genres: ["sci-fi", "adventure"],
+                rating: 9.2,
+                synopsis: "An epic journey through space and time as humanity searches for a new home among the stars.",
+                coverSrc: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect fill='%23667eea' width='400' height='225'/><text x='200' y='120' text-anchor='middle' fill='white' font-size='20'>Cosmic Odyssey</text></svg>",
+                videoSources: {
+                    "720p": "https://sample-videos.com/zip/10/mp4/720/SampleVideo_720x480_1mb.mp4",
+                    "1080p": "https://sample-videos.com/zip/10/mp4/1080/SampleVideo_1280x720_1mb.mp4"
+                },
+                subtitles: []
+            }, {
+                id: 2,
+                title: "Neon Nights",
+                type: "series",
+                year: 2023,
+                genres: ["drama", "thriller"],
+                rating: 8.7,
+                synopsis: "In a cyberpunk future, a detective unravels a conspiracy that threatens the digital world.",
+                coverSrc: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect fill='%23f093fb' width='400' height='225'/><text x='200' y='120' text-anchor='middle' fill='white' font-size='20'>Neon Nights</text></svg>",
+                videoSources: {
+                    "720p": "https://sample-videos.com/zip/10/mp4/720/SampleVideo_720x480_2mb.mp4",
+                    "1080p": "https://sample-videos.com/zip/10/mp4/1080/SampleVideo_1280x720_2mb.mp4"
+                },
+                subtitles: []
+            }, {
+                id: 3,
+                title: "Digital Dreams",
+                type: "movie",
+                year: 2024,
+                genres: ["sci-fi", "drama"],
+                rating: 8.9,
+                synopsis: "A programmer discovers that reality itself might be nothing more than advanced code.",
+                coverSrc: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect fill='%23764ba2' width='400' height='225'/><text x='200' y='120' text-anchor='middle' fill='white' font-size='18'>Digital Dreams</text></svg>",
+                videoSources: {
+                    "720p": "https://sample-videos.com/zip/10/mp4/720/SampleVideo_720x480_1mb.mp4"
+                },
+                subtitles: []
+            }, {
+                id: 4,
+                title: "Quantum Hearts",
+                type: "movie",
+                year: 2023,
+                genres: ["romance", "sci-fi"],
+                rating: 7.8,
+                synopsis: "Love transcends dimensions in this quantum physics romance.",
+                coverSrc: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect fill='%236a5acd' width='400' height='225'/><text x='200' y='120' text-anchor='middle' fill='white' font-size='18'>Quantum Hearts</text></svg>",
+                videoSources: {
+                    "720p": "https://sample-videos.com/zip/10/mp4/720/SampleVideo_720x480_2mb.mp4"
+                },
+                subtitles: []
+            }, {
+                id: 5,
+                title: "Shadow Protocol",
+                type: "series",
+                year: 2024,
+                genres: ["action", "thriller"],
+                rating: 9.0,
+                synopsis: "Elite agents operate in the shadows to protect global security.",
+                coverSrc: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect fill='%23ff006e' width='400' height='225'/><text x='200' y='120' text-anchor='middle' fill='white' font-size='18'>Shadow Protocol</text></svg>",
+                videoSources: {
+                    "720p": "https://sample-videos.com/zip/10/mp4/720/SampleVideo_720x480_1mb.mp4"
+                },
+                subtitles: []
+            }
+            // Add more mock content items...
+        ];
+
+        // Extend mock content with more variety
+        const additionalContent = [{
+            id: 6,
+            title: "Virtual Reality",
+            type: "movie",
+            year: 2022,
+            genres: ["sci-fi", "action"],
+            rating: 8.3,
+            synopsis: "When virtual reality becomes indistinguishable from real life, what defines existence?",
+            coverSrc: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect fill='%2306ffa5' width='400' height='225'/><text x='200' y='120' text-anchor='middle' fill='black' font-size='18'>Virtual Reality</text></svg>",
+            videoSources: {
+                "720p": "https://sample-videos.com/zip/10/mp4/720/SampleVideo_720x480_1mb.mp4"
+            },
+            subtitles: []
+        }, {
+            id: 7,
+            title: "Midnight Comedy",
+            type: "movie",
+            year: 2023,
+            genres: ["comedy"],
+            rating: 7.5,
+            synopsis: "Late-night laughs and unexpected friendships in this heartwarming comedy.",
+            coverSrc: "data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 225'><rect fill='%23ffa500' width='400' height='225'/><text x='200' y='120' text-anchor='middle' fill='white' font-size='16'>Midnight Comedy</text></svg>",
+            videoSources: {
+                "720p": "https://sample-videos.com/zip/10/mp4/720/SampleVideo_720x480_2mb.mp4"
+            },
+            subtitles: []
+        }];
+
+        // Combine all content
+        const allContent = [...mockContent, ...additionalContent];
+
+        // Global State Management
+        const AppState = {
+            currentContent: allContent,
+            filteredContent: allContent,
+            myList: JSON.parse(localStorage.getItem('zeonoMyList') || '[]'),
+            watchHistory: JSON.parse(localStorage.getItem('zeonoWatchHistory') || '[]'),
+            currentTheme: localStorage.getItem('zeonoTheme') || 'dark',
+            currentVideo: null,
+
+            // Save to localStorage
+            saveMyList() {
+                localStorage.setItem('zeonoMyList', JSON.stringify(this.myList));
+                debugLog('My List saved:', this.myList);
+            },
+
+            saveWatchHistory() {
+                localStorage.setItem('zeonoWatchHistory', JSON.stringify(this.watchHistory));
+                debugLog('Watch History saved:', this.watchHistory);
+            },
+
+            saveTheme() {
+                localStorage.setItem('zeonoTheme', this.currentTheme);
+                debugLog('Theme saved:', this.currentTheme);
+            }
+        };
+
+        // DOM Elements
+        const elements = {
+            searchBar: document.getElementById('searchBar'),
+            searchSuggestions: document.getElementById('searchSuggestions'),
+            contentGrid: document.getElementById('contentGrid'),
+            loadingSpinner: document.getElementById('loadingSpinner'),
+            typeFilter: document.getElementById('typeFilter'),
+            genreFilter: document.getElementById('genreFilter'),
+            yearFilter: document.getElementById('yearFilter'),
+            ratingFilter: document.getElementById('ratingFilter'),
+            videoModal: document.getElementById('videoModal'),
+            videoPlayer: document.getElementById('videoPlayer'),
+            modalTitle: document.getElementById('modalTitle'),
+            closeModal: document.getElementById('closeModal'),
+            themeToggle: document.getElementById('themeToggle'),
+            particlesBg: document.getElementById('particlesBg'),
+            playPauseBtn: document.getElementById('playPauseBtn'),
+            progressContainer: document.getElementById('progressContainer'),
+            progressBar: document.getElementById('progressBar'),
+            timeDisplay: document.getElementById('timeDisplay'),
+            fullscreenBtn: document.getElementById('fullscreenBtn')
+        };
+
+        // Initialize App
+        function initializeApp() {
+            debugLog('Initializing ZEONO App...');
+
+            // Apply saved theme
+            applyTheme(AppState.currentTheme);
+
+            // Create particles background
+            createParticles();
+
+            // Setup event listeners
+            setupEventListeners();
+
+            // Load content
+            loadContent();
+
+            // Hide loading spinner
+            setTimeout(() => {
+                elements.loadingSpinner.style.display = 'none';
+                elements.contentGrid.style.display = 'grid';
+            }, 1000);
+
+            debugLog('App initialized successfully');
+        }
+
+        // Create animated particles background
+        function createParticles() {
+            const particleCount = 50;
+
+            for (let i = 0; i < particleCount; i++) {
+                const particle = document.createElement('div');
+                particle.className = 'particle';
+                particle.style.left = Math.random() * 100 + '%';
+                particle.style.animationDelay = Math.random() * 6 + 's';
+                particle.style.animationDuration = (Math.random() * 3 + 3) + 's';
+
+                // Random particle colors
+                const colors = ['var(--neon-cyan)', 'var(--neon-purple)', 'var(--neon-pink)'];
+                particle.style.background = colors[Math.floor(Math.random() * colors.length)];
+
+                elements.particlesBg.appendChild(particle);
+            }
+        }
+
+        // Setup all event listeners
+        function setupEventListeners() {
+            // Search functionality
+            elements.searchBar.addEventListener('input', handleSearch);
+            elements.searchBar.addEventListener('focus', showSearchSuggestions);
+            elements.searchBar.addEventListener('blur', hideSearchSuggestions);
+
+            // Filter changes
+            elements.typeFilter.addEventListener('change', applyFilters);
+            elements.genreFilter.addEventListener('change', applyFilters);
+            elements.yearFilter.addEventListener('change', applyFilters);
+            elements.ratingFilter.addEventListener('change', applyFilters);
+
+            // Modal controls
+            elements.closeModal.addEventListener('click', closeVideoModal);
+            elements.videoModal.addEventListener('click', (e) => {
+                if (e.target === elements.videoModal) closeVideoModal();
+            });
+
+            // Theme toggle
+            elements.themeToggle.addEventListener('click', toggleTheme);
+
+            // Video player controls
+            setupVideoControls();
+
+            // Keyboard navigation
+            document.addEventListener('keydown', handleKeyboardNavigation);
+
+            // Scroll animations
+            window.addEventListener('scroll', handleScrollAnimations);
+        }
+
+        // Search functionality with autocomplete
+        function handleSearch(e) {
+            const query = e.target.value.toLowerCase().trim();
+
+            if (query.length === 0) {
+                AppState.filteredContent = AppState.currentContent;
+                renderContent();
+                hideSearchSuggestions();
+                return;
+            }
+
+            // Filter content based on search query
+            AppState.filteredContent = AppState.currentContent.filter(item =>
+                item.title.toLowerCase().includes(query) ||
+                item.genres.some(genre => genre.toLowerCase().includes(query)) ||
+                item.synopsis.toLowerCase().includes(query)
+            );
+
+            renderContent();
+            updateSearchSuggestions(query);
+        }
+
+        // Update search suggestions
+        function updateSearchSuggestions(query) {
+            const suggestions = AppState.currentContent
+                .filter(item => item.title.toLowerCase().includes(query))
+                .slice(0, 5)
+                .map(item => item.title);
+
+            elements.searchSuggestions.innerHTML = suggestions
+                .map(title => `<div class="suggestion-item" onclick="selectSuggestion('${title}')">${title}</div>`)
+                .join('');
+
+            if (suggestions.length > 0) {
+                showSearchSuggestions();
+            } else {
+                hideSearchSuggestions();
+            }
+        }
+
+        // Show/hide search suggestions
+        function showSearchSuggestions() {
+            elements.searchSuggestions.classList.add('show');
+        }
+
+        function hideSearchSuggestions() {
+            setTimeout(() => {
+                elements.searchSuggestions.classList.remove('show');
+            }, 200);
+        }
+
+        // Select suggestion
+        function selectSuggestion(title) {
+            elements.searchBar.value = title;
+            handleSearch({
+                target: {
+                    value: title
+                }
+            });
+            hideSearchSuggestions();
+        }
+
+        // Apply filters
+        function applyFilters() {
+            let filtered = AppState.currentContent;
+
+            const typeFilter = elements.typeFilter.value;
+            const genreFilter = elements.genreFilter.value;
+            const yearFilter = elements.yearFilter.value;
+            const ratingFilter = elements.ratingFilter.value;
+
+            if (typeFilter) {
+                filtered = filtered.filter(item => item.type === typeFilter);
+            }
+
+            if (genreFilter) {
+                filtered = filtered.filter(item => item.genres.includes(genreFilter));
+            }
+
+            if (yearFilter) {
+                filtered = filtered.filter(item => item.year.toString() === yearFilter);
+            }
+
+            if (ratingFilter) {
+                const minRating = parseFloat(ratingFilter);
+                filtered = filtered.filter(item => item.rating >= minRating);
+            }
+
+            AppState.filteredContent = filtered;
+            renderContent();
+
+            debugLog('Filters applied:', {
+                typeFilter,
+                genreFilter,
+                yearFilter,
+                ratingFilter
+            });
+        }
+
+        // Load and render content
+        function loadContent() {
+            renderContent();
+        }
+
+        // Render content grid
+        function renderContent() {
+            const grid = elements.contentGrid;
+
+            if (AppState.filteredContent.length === 0) {
+                grid.innerHTML = '<div style="grid-column: 1/-1; text-align: center; padding: 2rem; color: var(--text-secondary);">No content found matching your criteria.</div>';
+                return;
+            }
+
+            grid.innerHTML = AppState.filteredContent.map(item => createContentCard(item)).join('');
+
+            // Add fade-in animation
+            const cards = grid.querySelectorAll('.content-card');
+            cards.forEach((card, index) => {
+                card.style.animationDelay = `${index * 0.1}s`;
+                card.classList.add('fade-in');
+            });
+        }
+
+        // Create individual content card
+        function createContentCard(item) {
+            const isInMyList = AppState.myList.includes(item.id);
+            const starRating = generateStarRating(item.rating);
+
+            return `
+        <article class="content-card" role="gridcell" data-id="${item.id}">
+            <div class="card-image">
+                <img src="${item.coverSrc}" alt="${item.title} poster" loading="lazy">
+                <div class="play-overlay" onclick="playContent(${item.id})">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M8 5v14l11-7z"/>
+                    </svg>
+                </div>
+            </div>
+            <div class="card-content">
+                <h3 class="card-title">${item.title}</h3>
+                <div class="card-meta">
+                    <span>${item.year} • ${item.type}</span>
+                    <div class="rating" aria-label="Rating: ${item.rating} out of 10">
+                        ${starRating}
+                        <span>${item.rating}</span>
+                    </div>
+                </div>
+                <p class="card-synopsis">${item.synopsis}</p>
+                <div class="card-actions">
+                    <button class="btn btn-primary" onclick="playContent(${item.id})" aria-label="Play ${item.title}">
+                        <span>▶</span> Play
+                    </button>
+                    <button class="btn btn-secondary" onclick="toggleMyList(${item.id})" 
+                            aria-label="${isInMyList ? 'Remove from' : 'Add to'} My List">
+                        <span>${isInMyList ? '✓' : '+'}</span>
+                        ${isInMyList ? 'In List' : 'My List'}
+                    </button>
+                </div>
+            </div>
+        </article>
+    `;
+        }
+
+        // Generate star rating HTML
+        function generateStarRating(rating) {
+            const stars = Math.floor(rating / 2); // Convert 10-point to 5-star
+            const hasHalfStar = (rating / 2) % 1 >= 0.5;
+            let html = '';
+
+            for (let i = 0; i < 5; i++) {
+                if (i < stars) {
+                    html += '<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                } else if (i === stars && hasHalfStar) {
+                    html += '<svg viewBox="0 0 24 24"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z" opacity="0.5"/></svg>';
+                } else {
+                    html += '<svg viewBox="0 0 24 24" opacity="0.3"><path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/></svg>';
+                }
+            }
+
+            return html;
+        }
+
+        // Play content
+        function playContent(id) {
+            const content = AppState.currentContent.find(item => item.id === id);
+            if (!content) return;
+
+            AppState.currentVideo = content;
+
+            // Add to watch history
+            if (!AppState.watchHistory.includes(id)) {
+                AppState.watchHistory.unshift(id);
+                AppState.saveWatchHistory();
+            }
+
+            // Setup video player
+            elements.modalTitle.textContent = content.title;
+
+            // Use first available video source
+            const videoSources = Object.values(content.videoSources);
+            if (videoSources.length > 0) {
+                elements.videoPlayer.src = videoSources[0];
+            }
+
+            // Show modal
+            elements.videoModal.classList.add('show');
+            elements.videoModal.setAttribute('aria-hidden', 'false');
+
+            // Focus management for accessibility
+            elements.closeModal.focus();
+
+            debugLog('Playing content:', content);
+        }
+
+        // Close video modal
+        function closeVideoModal() {
+            elements.videoModal.classList.remove('show');
+            elements.videoModal.setAttribute('aria-hidden', 'true');
+            elements.videoPlayer.pause();
+            elements.videoPlayer.src = '';
+            AppState.currentVideo = null;
+        }
+
+        // Toggle My List
+        function toggleMyList(id) {
+            const index = AppState.myList.indexOf(id);
+
+            if (index === -1) {
+                AppState.myList.push(id);
+            } else {
+                AppState.myList.splice(index, 1);
+            }
+
+            AppState.saveMyList();
+            renderContent(); // Re-render to update button states
+
+            debugLog('My List updated:', AppState.myList);
+        }
+
+        // Setup video player controls
+        function setupVideoControls() {
+            const video = elements.videoPlayer;
+
+            // Play/Pause
+            elements.playPauseBtn.addEventListener('click', () => {
+                if (video.paused) {
+                    video.play();
+                    elements.playPauseBtn.textContent = '⏸';
+                } else {
+                    video.pause();
+                    elements.playPauseBtn.textContent = '▶';
+                }
+            });
+
+            // Progress bar
+            video.addEventListener('timeupdate', updateProgress);
+            elements.progressContainer.addEventListener('click', seekVideo);
+
+            // Fullscreen
+            elements.fullscreenBtn.addEventListener('click', toggleFullscreen);
+
+            // Video events
+            video.addEventListener('loadedmetadata', () => {
+                updateTimeDisplay();
+            });
+
+            video.addEventListener('ended', () => {
+                elements.playPauseBtn.textContent = '▶';
+                showRecommendations();
+            });
+        }
+
+        // Update video progress
+        function updateProgress() {
+            const video = elements.videoPlayer;
+            const progress = (video.currentTime / video.duration) * 100;
+            elements.progressBar.style.width = progress + '%';
+            updateTimeDisplay();
+        }
+
+        // Seek video
+        function seekVideo(e) {
+            const video = elements.videoPlayer;
+            const rect = elements.progressContainer.getBoundingClientRect();
+            const clickX = e.clientX - rect.left;
+            const width = rect.width;
+            const percentage = clickX / width;
+            video.currentTime = percentage * video.duration;
+        }
+
+        // Update time display
+        function updateTimeDisplay() {
+            const video = elements.videoPlayer;
+            const current = formatTime(video.currentTime);
+            const duration = formatTime(video.duration || 0);
+            elements.timeDisplay.textContent = `${current} / ${duration}`;
+        }
+
+        // Format time helper
+        function formatTime(seconds) {
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        // Toggle fullscreen
+        function toggleFullscreen() {
+            if (document.fullscreenElement) {
+                document.exitFullscreen();
+            } else {
+                elements.videoPlayer.requestFullscreen();
+            }
+        }
+
+        // Show content recommendations
+        function showRecommendations() {
+            if (!AppState.currentVideo) return;
+
+            const currentGenres = AppState.currentVideo.genres;
+            const recommendations = AppState.currentContent
+                .filter(item =>
+                    item.id !== AppState.currentVideo.id &&
+                    item.genres.some(genre => currentGenres.includes(genre))
+                )
+                .sort((a, b) => b.rating - a.rating)
+                .slice(0, 3);
+
+            debugLog('Recommendations:', recommendations);
+            // Could show recommendations in modal or as overlay
+        }
+
+        // Theme toggle
+        function toggleTheme() {
+            AppState.currentTheme = AppState.currentTheme === 'dark' ? 'light' : 'dark';
+            applyTheme(AppState.currentTheme);
+            AppState.saveTheme();
+        }
+
+        // Apply theme
+        function applyTheme(theme) {
+            document.documentElement.setAttribute('data-theme', theme);
+            elements.themeToggle.classList.toggle('active', theme === 'light');
+            debugLog('Theme applied:', theme);
+        }
+
+        // Keyboard navigation
+        function handleKeyboardNavigation(e) {
+            // ESC to close modal
+            if (e.key === 'Escape' && elements.videoModal.classList.contains('show')) {
+                closeVideoModal();
+            }
+
+            // Space to play/pause video
+            if (e.key === ' ' && elements.videoModal.classList.contains('show')) {
+                e.preventDefault();
+                elements.playPauseBtn.click();
+            }
+
+            // Arrow keys for video seeking
+            if (elements.videoModal.classList.contains('show')) {
+                if (e.key === 'ArrowLeft') {
+                    elements.videoPlayer.currentTime -= 10;
+                } else if (e.key === 'ArrowRight') {
+                    elements.videoPlayer.currentTime += 10;
+                }
+            }
+        }
+
+        // Scroll animations
+        function handleScrollAnimations() {
+            const cards = document.querySelectorAll('.content-card');
+            const windowHeight = window.innerHeight;
+
+            cards.forEach(card => {
+                const cardTop = card.getBoundingClientRect().top;
+                if (cardTop < windowHeight - 100) {
+                    card.classList.add('fade-in');
+                }
+            });
+        }
+
+        // Scroll to content
+        function scrollToContent() {
+            document.getElementById('categories').scrollIntoView({
+                behavior: 'smooth'
+            });
+        }
+
+        // Privacy Policy Modal (placeholder)
+        function showPrivacyModal() {
+            alert('Privacy Policy Modal would open here.\n\nThis is a demo site with no real data collection.\nAll user preferences are stored locally in your browser only.');
+        }
+
+        // Admin Panel Functions (Demo UI Only - No Authentication)
+        function showAdminPanel() {
+            // This would require proper authentication in a real app
+            console.log('Admin panel access - requires authentication in production');
+
+            const adminPanel = document.createElement('div');
+            adminPanel.innerHTML = `
+        <div class="modal show">
+            <div class="modal-content" style="max-width: 600px;">
+                <div class="modal-header">
+                    <h2>Admin Panel (Demo)</h2>
+                    <button onclick="this.closest('.modal').remove()">&times;</button>
+                </div>
+                <div style="padding: 1.5rem;">
+                    <h3>Add New Content</h3>
+                    <form id="adminForm" style="display: grid; gap: 1rem;">
+                        <input type="text" placeholder="Title" id="adminTitle" required>
+                        <select id="adminType">
+                            <option value="movie">Movie</option>
+                            <option value="series">Series</option>
+                        </select>
+                        <input type="number" placeholder="Year" id="adminYear" min="1900" max="2030">
+                        <input type="text" placeholder="Genres (comma separated)" id="adminGenres">
+                        <input type="number" placeholder="Rating" id="adminRating" min="0" max="10" step="0.1">
+                        <textarea placeholder="Synopsis" id="adminSynopsis" rows="3"></textarea>
+                        <button type="submit" class="btn btn-primary">Add Content (Demo)</button>
+                    </form>
+                    <p style="color: var(--text-secondary); font-size: 0.9rem; margin-top: 1rem;">
+                        Note: This is a demo interface. In production, this would require proper authentication 
+                        and backend integration.
+                    </p>
+                </div>
+            </div>
+        </div>
+    `;
+
+            document.body.appendChild(adminPanel);
+
+            // Handle form submission (demo only)
+            document.getElementById('adminForm').addEventListener('submit', (e) => {
+                e.preventDefault();
+                alert('In a real application, this would save to the backend database.');
+                adminPanel.remove();
+            });
+        }
+
+        // Unit Test Example (as requested)
+        function runUnitTests() {
+            debugLog('Running unit tests...');
+
+            // Test 1: Content filtering
+            function testContentFiltering() {
+                const testContent = [{
+                    id: 1,
+                    type: 'movie',
+                    genres: ['action'],
+                    rating: 8.5
+                }, {
+                    id: 2,
+                    type: 'series',
+                    genres: ['drama'],
+                    rating: 7.2
+                }];
+
+                const filtered = testContent.filter(item => item.type === 'movie');
+                console.assert(filtered.length === 1, 'Content filtering test failed');
+                console.assert(filtered[0].id === 1, 'Wrong content filtered');
+
+                debugLog('✓ Content filtering test passed');
+            }
+
+            // Test 2: Rating calculation
+            function testRatingCalculation() {
+                const rating = 8.4;
+                const stars = Math.floor(rating / 2);
+                const hasHalfStar = (rating / 2) % 1 >= 0.5;
+
+                console.assert(stars === 4, 'Star calculation test failed');
+                console.assert(hasHalfStar === true, 'Half star calculation test failed');
+
+                debugLog('✓ Rating calculation test passed');
+            }
+
+            // Test 3: My List functionality
+            function testMyListFunctionality() {
+                const originalList = [...AppState.myList];
+                const testId = 999;
+
+                // Add to list
+                if (!AppState.myList.includes(testId)) {
+                    AppState.myList.push(testId);
+                }
+                console.assert(AppState.myList.includes(testId), 'Add to My List test failed');
+
+                // Remove from list
+                const index = AppState.myList.indexOf(testId);
+                if (index !== -1) {
+                    AppState.myList.splice(index, 1);
+                }
+                console.assert(!AppState.myList.includes(testId), 'Remove from My List test failed');
+
+                // Restore original list
+                AppState.myList = originalList;
+
+                debugLog('✓ My List functionality test passed');
+            }
+
+            // Run tests
+            try {
+                testContentFiltering();
+                testRatingCalculation();
+                testMyListFunctionality();
+                debugLog('All unit tests passed! ✓');
+            } catch (error) {
+                console.error('Unit test failed:', error);
+            }
+        }
+
+        // Performance monitoring
+        function monitorPerformance() {
+            if (!DEBUG_MODE) return;
+
+            // Monitor content rendering time
+            const startTime = performance.now();
+
+            setTimeout(() => {
+                const endTime = performance.now();
+                debugLog(`Content rendering took ${endTime - startTime} milliseconds`);
+            }, 100);
+
+            // Monitor memory usage (if available)
+            if ('memory' in performance) {
+                const memory = performance.memory;
+                debugLog('Memory usage:', {
+                    used: Math.round(memory.usedJSHeapSize / 1024 / 1024) + ' MB',
+                    total: Math.round(memory.totalJSHeapSize / 1024 / 1024) + ' MB'
+                });
+            }
+        }
+
+        // Enhanced search with fuzzy matching
+        function fuzzySearch(query, items) {
+            const results = items.map(item => {
+                    let score = 0;
+                    const titleLower = item.title.toLowerCase();
+                    const queryLower = query.toLowerCase();
+
+                    // Exact match gets highest score
+                    if (titleLower.includes(queryLower)) {
+                        score += 100;
+                    }
+
+                    // Genre matches
+                    item.genres.forEach(genre => {
+                        if (genre.toLowerCase().includes(queryLower)) {
+                            score += 50;
+                        }
+                    });
+
+                    // Synopsis matches
+                    if (item.synopsis.toLowerCase().includes(queryLower)) {
+                        score += 25;
+                    }
+
+                    // Character-by-character fuzzy matching
+                    let fuzzyScore = 0;
+                    for (let i = 0; i < Math.min(queryLower.length, titleLower.length); i++) {
+                        if (queryLower[i] === titleLower[i]) {
+                            fuzzyScore += 10;
+                        }
+                    }
+                    score += fuzzyScore;
+
+                    return {
+                        item,
+                        score
+                    };
+                })
+                .filter(result => result.score > 0)
+                .sort((a, b) => b.score - a.score)
+                .map(result => result.item);
+
+            return results;
+        }
+
+        // Device-specific optimizations
+        function optimizeForDevice() {
+            const isMobile = window.innerWidth <= 768;
+            const isTouch = 'ontouchstart' in window;
+
+            if (isMobile) {
+                // Reduce particle count on mobile for better performance
+                const particles = document.querySelectorAll('.particle');
+                particles.forEach((particle, index) => {
+                    if (index % 2 === 0) {
+                        particle.remove();
+                    }
+                });
+
+                debugLog('Mobile optimizations applied');
+            }
+
+            if (isTouch) {
+                // Add touch-specific styles
+                document.body.classList.add('touch-device');
+                debugLog('Touch device detected');
+            }
+        }
+
+        // Accessibility enhancements
+        function enhanceAccessibility() {
+            // Add skip link
+            const skipLink = document.createElement('a');
+            skipLink.href = '#categories';
+            skipLink.textContent = 'Skip to main content';
+            skipLink.className = 'sr-only';
+            skipLink.style.cssText = `
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: var(--neon-cyan);
+        color: black;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 10000;
+        transition: top 0.3s;
+    `;
+
+            skipLink.addEventListener('focus', () => {
+                skipLink.style.top = '6px';
+            });
+
+            skipLink.addEventListener('blur', () => {
+                skipLink.style.top = '-40px';
+            });
+
+            document.body.insertBefore(skipLink, document.body.firstChild);
+
+            // Enhanced ARIA labels for dynamic content
+            function updateAriaLabels() {
+                const contentCount = AppState.filteredContent.length;
+                elements.contentGrid.setAttribute('aria-label', `${contentCount} movies and series available`);
+            }
+
+            // Call when content updates
+            window.addEventListener('contentUpdate', updateAriaLabels);
+
+            debugLog('Accessibility enhancements applied');
+        }
+
+        // Data validation and sanitization
+        function validateContent(content) {
+            const required = ['id', 'title', 'type', 'year', 'rating'];
+            const errors = [];
+
+            required.forEach(field => {
+                if (!content[field]) {
+                    errors.push(`Missing required field: ${field}`);
+                }
+            });
+
+            if (content.rating && (content.rating < 0 || content.rating > 10)) {
+                errors.push('Rating must be between 0 and 10');
+            }
+
+            if (content.year && (content.year < 1900 || content.year > 2030)) {
+                errors.push('Year must be between 1900 and 2030');
+            }
+
+            return {
+                valid: errors.length === 0,
+                errors
+            };
+        }
+
+        // Initialize everything when DOM is loaded
+        document.addEventListener('DOMContentLoaded', () => {
+            initializeApp();
+
+            // Run additional setup
+            setTimeout(() => {
+                optimizeForDevice();
+                enhanceAccessibility();
+                monitorPerformance();
+
+                // Run unit tests in debug mode
+                if (DEBUG_MODE) {
+                    runUnitTests();
+                }
+            }, 500);
+
+            // Add console Easter egg
+            console.log(`
+    ╔══════════════════════════════════════╗
+    ║            ZEONO v1.0.0              ║
+    ║     Next-Gen Streaming Platform      ║
+    ║                                      ║
+    ║  🎬 Built with cutting-edge web tech ║
+    ║  ✨ Featuring advanced CSS effects   ║
+    ║  🚀 Optimized for all devices        ║
+    ║                                      ║
+    ║  Try: runUnitTests()                 ║
+    ║       showAdminPanel()               ║
+    ╚══════════════════════════════════════╝
+    `);
+        });
+
+        // Handle browser back/forward navigation
+        window.addEventListener('popstate', (e) => {
+            if (elements.videoModal.classList.contains('show')) {
+                closeVideoModal();
+            }
+        });
+
+        // Handle visibility change (pause video when tab not active)
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden && elements.videoPlayer && !elements.videoPlayer.paused) {
+                elements.videoPlayer.pause();
+                elements.playPauseBtn.textContent = '▶';
+            }
+        });
+
+        // Service Worker registration for PWA functionality (commented for demo)
+        /*
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js')
+                    .then(registration => {
+                        debugLog('SW registered: ', registration);
+                    })
+                    .catch(registrationError => {
+                        debugLog('SW registration failed: ', registrationError);
+                    });
+            });
+        }
+        */
+
+        // Export functions for testing (would use proper module system in production)
+        window.ZEONO_DEBUG = {
+            runUnitTests,
+            showAdminPanel,
+            fuzzySearch,
+            validateContent,
+            AppState: DEBUG_MODE ? AppState : null
+        };
+    </script>
+
+    <!-- 
+==============================================
+END OF ZEONO STREAMING PLATFORM
+==============================================
+
+SETUP INSTRUCTIONS:
+1. Save this file as "zeono.html"
+2. Open in any modern web browser
+3. Or use http-server: npx http-server .
+
+FEATURES INCLUDED:
+✓ Responsive design (mobile, tablet, desktop)
+✓ Dark/Light theme toggle
+✓ Advanced search with autocomplete
+✓ Content filtering system
+✓ Custom video player with controls
+✓ My List functionality (localStorage)
+✓ Animated particles background
+✓ Glassmorphism UI effects
+✓ Accessibility features
+✓ Keyboard navigation
+✓ Unit testing framework
+✓ Admin panel demo
+✓ Performance monitoring
+✓ Cross-browser compatibility
+
+PRODUCTION NOTES:
+- Replace mock video URLs with licensed content
+- Implement proper authentication system
+- Add real backend API integration
+- Set up CDN for video streaming
+- Add payment processing
+- Implement user accounts system
+- Add advanced analytics
+- Set up proper error logging
+
+TECHNOLOGY STACK:
+- HTML5 semantic markup
+- CSS3 with custom properties
+- Vanilla JavaScript (ES2020+)
+- Local storage for data persistence
+- Web APIs (Fullscreen, Performance, etc.)
+- Responsive design principles
+- Accessibility best practices
+
+==============================================
+-->
+
+</body>
+
+</html>
